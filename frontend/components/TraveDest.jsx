@@ -15,7 +15,7 @@ function TraveDest() {
       setLoading(true);
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/v1/getAll?limit=6`
+          `${import.meta.env.VITE_API_URL}/api/v1/getAll?limit=7`
         );
         const { data } = await res.json();
 
@@ -106,18 +106,18 @@ function TraveDest() {
               <div className="grid grid-rows-3 gap-2 overflow-hidden rounded-xl">
                 <GridTwo
                   id={`/getOne/${posts?.[3]?.id}`}
-                  img={posts?.[3]?.images?.[0]}
+                  img={posts?.[3]?.images?.[2]}
                   name={posts?.[3]?.country + " " + "Tour"}
                 />
                 <GridTwo
                   id={`/getOne/${posts?.[4]?.id}`}
-                  img={posts?.[4]?.images?.[0]}
+                  img={posts?.[4]?.images?.[2]}
                   name={posts?.[4]?.country + " " + "Tour"}
                 />
                 <GridTwo
-                  id={`/getOne/${posts?.[5]?.id}`}
-                  img={posts?.[5]?.images?.[2]}
-                  name={posts?.[5]?.country + " " + "Tour"}
+                  id={`/getOne/${posts?.[6]?.id}`}
+                  img={posts?.[6]?.images?.[0]}
+                  name={posts?.[6]?.country + " " + "Tour"}
                 />
               </div>
             </div>

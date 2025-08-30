@@ -1,10 +1,14 @@
+
+
 import express from 'express'
 import cors from 'cors'
-import dotenv from 'dotenv'
+
 import db from './config/db.js'
 import router from './routes/AIrouter.js'
 
-dotenv.config()
+
+
+
 
 await db()
 const app = express()

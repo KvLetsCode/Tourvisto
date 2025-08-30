@@ -1,7 +1,9 @@
 import OpenAI from "openai";
+import dotenv from "dotenv";
+dotenv.config();
 
 const client = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 async function main(prompt) {
