@@ -24,10 +24,10 @@ function Header() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center px-6 lg:px-40">
-        <h1 className="lg:text-6xl text-5xl font-bold leading-tight">
+        <h1 className="lg:text-4xl text-5xl font-bold leading-tight">
           Plan Your <br /> Trip with Ease
         </h1>
-        <p className="mt-6 font-semibold leading-relaxed lg:text-lg text-md max-w-xl">
+        <p className="mt-6 font-semibold leading-relaxed lg:text-md text-md max-w-xl">
           Customize your travel itinerary in minutes using AI—pick your <br />
           destination, set your preferences, and explore with confidence.
         </p>

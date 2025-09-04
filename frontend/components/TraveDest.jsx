@@ -36,8 +36,8 @@ function TraveDest() {
   return (
     <>
       {loading ? (
-        <main>
-          <div className=" w-full min-h-screen flex flex-col  max-w-7xl mx-auto px-4 lg:px-8 mt-18 lg:pr-0 pr-10">
+        <main className=''>
+          <div className=" w-full min-h-screen flex flex-col   max-w-7xl mx-auto px-4 lg:px-10 mt-18 lg:pr-0 pr-10">
             <h1 className="text-lg md:text-2xl font-semibold text-dark-100 mb-4 ">
               Featured Travel Destinations
             </h1>
@@ -51,7 +51,7 @@ function TraveDest() {
         </main>
       ) : (
         <main className="">
-          <div className="w-full max-w-7xl mx-auto px-4 lg:px-8 mt-16">
+          <div className="w-full max-w-6xl mx-auto px-4 lg:px-16 mt-16">
             <h1 className="text-lg md:text-2xl font-semibold text-dark-100 mb-2">
               Featured Travel Destinations
             </h1>
