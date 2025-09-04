@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { parseTripData } from "../lib/utils";
 import CircularProgress from "@mui/material/CircularProgress";
 
-
 function TraveDest() {
   const [posts, setPosts] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -34,8 +33,6 @@ function TraveDest() {
     fetchPosts();
   }, []);
 
- 
-
   return (
     <>
       {loading ? (
@@ -48,77 +45,61 @@ function TraveDest() {
               Check out some of the best places you can visit around the world.
             </p>
             <div className="flex justify-center items-center flex-1">
-          <CircularProgress size={42} />
-        </div>
+              <CircularProgress size={42} />
+            </div>
           </div>
-
-          
         </main>
       ) : (
         <main className="">
-          <div className=" w-full min-h-screen flex flex-col  max-w-7xl mx-auto px-4 lg:px-8 mt-18 lg:pr-0 pr-10">
-            <h1 className="text-lg md:text-2xl font-semibold text-dark-100 mb-4 ">
+          <div className="w-full max-w-7xl mx-auto px-4 lg:px-8 mt-16">
+            <h1 className="text-lg md:text-2xl font-semibold text-dark-100 mb-2">
               Featured Travel Destinations
             </h1>
-            <p className="text-gray-400">
+            <p className="text-gray-500">
               Check out some of the best places you can visit around the world.
             </p>
 
-            <div className="grid gap-2 md:grid-cols-3 rounded-xl mt-8 ml-10 place-items-stretch">
-              <div className="md:col-span-2 grid grid-cols-2 gap-4 ">
+            <div className="grid gap-3 md:grid-cols-3 rounded-xl mt-6 ">
+              <div className="md:col-span-2 grid grid-cols-2 gap-3">
                 <Link
                   to={`/getOne/${posts?.[0]?.id}`}
-                  className={`col-span-2 block overflow-hidden rounded-xl relative`}
+                  className="col-span-2 block overflow-hidden rounded-xl relative"
                 >
                   <img
                     src={posts?.[0]?.images?.[1]}
-                    alt="Barcelona Tour"
-                    className={`w-full h-[260px] object-cover`}
+                    alt="Destination"
+                    className="w-full h-[220px] md:h-[260px] object-cover"
                   />
-                  <TravelDestData name={posts?.[0]?.country + " " + "Tour"} />
-                </Link>
-                <Link
-                  to={`/getOne/${posts?.[1]?.id}`}
-                  className={`col-span-1 block overflow-hidden rounded-xl relative`}
-                >
-                  <img
-                    src={posts?.[1]?.images?.[0]}
-                    alt="Barcelona Tour"
-                    className={`w-full h-[260px] object-cover`}
-                  />
-                  <TravelDestData name={posts?.[1]?.country + " " + "Tour"} />
+                  <TravelDestData name={posts?.[0]?.country + " Tour"} />
                 </Link>
 
-                <Link
-                  to={`/getOne/${posts?.[2]?.id}`}
-                  className={`col-span-1 block overflow-hidden rounded-xl relative`}
-                >
-                  <img
-                    src={posts?.[2]?.images?.[1]}
-                    alt="Barcelona Tour"
-                    className={`w-full h-[260px] object-cover`}
-                  />
-                  <TravelDestData name={posts?.[2]?.country + " " + "Tour"} />
-                </Link>
+                {/* two small cards */}
+                {posts?.slice(1, 3).map((post, i) => (
+                  <Link
+                    key={post.id}
+                    to={`/getOne/${post.id}`}
+                    className="block overflow-hidden rounded-xl relative"
+                  >
+                    <img
+                      src={post.images?.[0]}
+                      alt="Destination"
+                      className="w-full h-[200px] md:h-[260px] object-cover"
+                    />
+                    <TravelDestData name={post.country + " Tour"} />
+                  </Link>
+                ))}
               </div>
 
-              {/* RIGHT: three small stacked */}
-              <div className="grid grid-rows-3 gap-2 overflow-hidden rounded-xl">
-                <GridTwo
-                  id={`/getOne/${posts?.[3]?.id}`}
-                  img={posts?.[3]?.images?.[2]}
-                  name={posts?.[3]?.country + " " + "Tour"}
-                />
-                <GridTwo
-                  id={`/getOne/${posts?.[4]?.id}`}
-                  img={posts?.[4]?.images?.[2]}
-                  name={posts?.[4]?.country + " " + "Tour"}
-                />
-                <GridTwo
-                  id={`/getOne/${posts?.[6]?.id}`}
-                  img={posts?.[6]?.images?.[0]}
-                  name={posts?.[6]?.country + " " + "Tour"}
-                />
+              {/* RIGHT stacked */}
+              <div className="grid grid-rows-3 gap-3">
+                {posts?.slice(3, 6).map((post) => (
+                  <GridTwo
+                    key={post.id}
+                    id={`/getOne/${post.id}`}
+                    img={post.images?.[0]}
+                    name={post.country + " Tour"}
+                  />
+                ))}
               </div>
             </div>
           </div>

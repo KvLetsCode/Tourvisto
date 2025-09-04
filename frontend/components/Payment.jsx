@@ -37,8 +37,8 @@ const Payment = () => {
   
   return (
     <main className="grid lg:grid-cols-2 h-dvh">
-      <section className="flex flex-col lg:items-center  mt-8 ml-8 h-auto mb-16 lg:justify-center">
-        <Link to={`/getOne/${id}`} className="w-full flex flex-col items-start lg:ml-[10rem]">
+      <section className="flex flex-col lg:items-center  !mt-8 !ml-8 h-auto !mb-16 lg:justify-center">
+        <Link to={`/getOne/${id}`} className="w-full flex flex-col items-start lg:!ml-[10rem]">
           <span className="flex items-center gap-2">
             <img src="/assets/icons/arrow-left.svg" alt="" />
             <img src="/assets/icons/logo.svg" alt="" />
@@ -46,20 +46,20 @@ const Payment = () => {
             
           </span>
         </Link>
-        <div className="flex flex-col items-start mt-8">
+        <div className="flex flex-col items-start !mt-8">
           <h1 className="text-xl font-semibold text-gray-500">{trip?.name}</h1>
           <p className="font-bold text-2xl mt-1">{trip?.estimatedPrice}</p>
-          <img src={trip?.imagesUrls?.[0]} alt="" className="h-50 w-50 rounded-lg mt-4" />
+          <img src={trip?.imagesUrls?.[0]} alt="" className="h-50 w-50 rounded-lg !mt-4" />
           <p className="font-semibold text-xl mt-5">{trip?.duration} Day {trip?.country} Adventure</p>
           <p className="font-semibold mt-2 text-lg text-gray-500">{trip?.travelStyle} , {trip?.budget}, {trip?.interests }</p>
         </div>
       </section>
-      <form onSubmit={handleSubmit} className="shadow-200 flex flex-col pt-8 lg:pt-0 items-center justify-center ">
+      <form onSubmit={handleSubmit} className="shadow-200 flex flex-col !pt-8 lg:!pt-0 items-center justify-center ">
         <div className="lg:max-w-md max-w-screen">
-          <button type="button"  className="flex justify-center  rounded-lg p-2 bg-black text-white w-full mt-6 cursor-pointer ">
+          <button type="button"  className="flex justify-center  rounded-lg !p-2 bg-black text-white w-full 1mt-6 cursor-pointer ">
             Pay Using UPI
           </button>
-          <div className="mt-10 flex flex-row items-center gap-6 ">
+          <div className="!mt-10 flex flex-row items-center gap-6 ">
             <div className="w-[139px] border border-gray-300" />
             <span className="text-gray-500">Or pay with card </span>
             <div className="w-[139px] border border-gray-300" />
@@ -77,7 +77,7 @@ const Payment = () => {
                 className="p-2 shadow-lg rounded-lg h-full mt-3 border border-gray-300 outline-none font-semibold"
               />
             </div>
-            <div className="mt-8 w-full flex flex-col">
+            <div className="!mt-8 w-full flex flex-col">
               <label htmlFor="email" className="text-gray-500 font-semibold">
                 Country or region
               </label>
@@ -95,16 +95,16 @@ const Payment = () => {
                   />
                   <ul className="flex gap-3 items-center">
                     <li>
-                      <Input image="/assets/images/Visa.png" />
+                      <img src="/assets/images/Visa.png" className="size-8"/>
                     </li>
                     <li>
-                      <Input image="/assets/images/american-express.png" />
+                      <img src="/assets/images/american-express.png" className="size-8"  />
                     </li>
                     <li>
-                      <Input image="/assets/images/discover.png" />
+                      <img src="/assets/images/discover.png" className="size-8" />
                     </li>
                     <li>
-                      <Input image="/assets/images/money.png" />
+                      <img src="/assets/images/money.png" className="size-8" />
                     </li>
                   </ul>
                 </span>

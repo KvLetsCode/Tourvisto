@@ -85,7 +85,7 @@ const TravelPage = () => {
             ))}
           </div>
         </section>
-        <Stack spacing={2} alignItems="center" mt={3} className="border-t border-t-gray-300 pt-4">
+        <Stack spacing={2} alignItems="center" mt={3} mb={4} className="border-t border-t-gray-300 pt-4">
           <Pagination
             count={totalPages}
             page={page}
