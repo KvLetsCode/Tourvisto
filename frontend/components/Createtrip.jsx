@@ -115,7 +115,7 @@ const Createtrip = () => {
   
 
   return (
-    <main className="flex flex-col gap-10 pb-20 w-full max-w-7xl mx-auto px-4 lg:px-8 mt-8">
+    <main className="flex flex-col gap-10 pb-20 w-full max-w-5xl mx-auto px-4 lg:px-8 mt-8">
       <header className="flex flex-col gap-5 md:flex-row justify-between w-full">
         <article className="flex flex-col gap-3.5 w-full">
           <h1
@@ -144,7 +144,7 @@ const Createtrip = () => {
           </p>
         </article>
       </header>
-      <section className="mt-2.5 w-full max-w-3xl px-4 lg:px-8 mx-auto">
+      <section className="mt-2.5 w-full max-w-2xl px-4 lg:px-8 mx-auto">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 py-6 bg-white border border-light-200 rounded-xl shadow-100"

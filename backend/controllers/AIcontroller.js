@@ -68,11 +68,17 @@ export const AIdataPost = async (req, res) => {
 
     const imageResponse = await fetch(
       `https://api.unsplash.com/search/photos?query=${country} ${interest} ${travelStyles}&client_id=${unsplashApikey}`
-      );
+    );
+    
       
-    const imageUrls = (await imageResponse.json()).results
-      .slice(0, 3)
-      .map((result) => result.urls?.regular || null);
+    const data = await imageResponse.json();
+
+    // check if results exist and are an array
+    const results = Array.isArray(data.results) ? data.results : [];
+
+    const imageUrls = results.slice(0, 3).map(
+      (result) => result.urls?.regular || null
+    );
 
     const result = await Data.create({info: JSON.stringify(parsedInfo),images: imageUrls });
 
