@@ -6,7 +6,8 @@ import cors from 'cors'
 import db from './config/db.js'
 import router from './routes/AIrouter.js'
 
-
+import dotenv from "dotenv";
+dotenv.config();
 
 
 

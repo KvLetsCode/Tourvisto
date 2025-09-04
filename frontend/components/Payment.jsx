@@ -55,7 +55,7 @@ const Payment = () => {
         </div>
       </section>
       <form onSubmit={handleSubmit} className="shadow-200 flex flex-col pt-8 lg:pt-0 items-center justify-center ">
-        <div className="lg:max-w-md max-w-screen">
+        <div className="lg:max-w-md max-w-sm mb-8">
           <button type="button"  className="flex justify-center  rounded-lg p-2 bg-black text-white w-full mt-6 cursor-pointer ">
             Pay Using UPI
           </button>
